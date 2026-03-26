@@ -1,0 +1,4 @@
+interface:
+  display_name: "Env Doc Sync"
+  short_description: "Keep env docs and examples in sync"
+  default_prompt: "Use this skill to keep .env.example and environment documentation synchronized by adding/removing keys, descriptions, defaults/placeholders, and usage notes without exposing secrets."

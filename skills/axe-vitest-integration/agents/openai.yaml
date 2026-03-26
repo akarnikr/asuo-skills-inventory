@@ -1,0 +1,4 @@
+interface:
+  display_name: "Axe Vitest Integration"
+  short_description: "Add automated a11y checks to Vitest"
+  default_prompt: "Use this skill to integrate or update accessibility testing with Vitest using vitest-axe and Testing Library, then add deterministic tests with clear pass/fail diagnostics."

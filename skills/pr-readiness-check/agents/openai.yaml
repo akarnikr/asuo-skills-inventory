@@ -1,0 +1,4 @@
+interface:
+  display_name: "PR Readiness Check"
+  short_description: "Validate pull requests before merge"
+  default_prompt: "Use this skill to evaluate whether a pull request is ready to merge by checking scope, tests, lint status, risk, docs, and release impact, then return blocking issues first and a concise readiness decision."

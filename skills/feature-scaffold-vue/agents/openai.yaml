@@ -1,0 +1,4 @@
+interface:
+  display_name: "Feature Scaffold Vue"
+  short_description: "Scaffold Vue feature modules"
+  default_prompt: "Use this skill to scaffold a Vue 3 feature module in src/features with mirrored Vitest tests under tests/features and minimal starter files aligned to AGENTS.md."

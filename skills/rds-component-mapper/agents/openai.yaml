@@ -1,0 +1,4 @@
+interface:
+  display_name: "RDS Component Mapper"
+  short_description: "Map requirements to RDS components"
+  default_prompt: "Use this skill to map requirement text to RDS Vue UI components, identify best-fit options, and emit WARNING: RDS GAP when no component fully satisfies a requirement."
