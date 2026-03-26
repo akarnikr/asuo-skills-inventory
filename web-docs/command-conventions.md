@@ -18,7 +18,7 @@ cp -R "$SKILLS_REPO_PATH/skills/<skill-slug>" "${CODEX_HOME:-$HOME/.codex}/skill
 Top-level page section exposes:
 
 ```bash
-for s in "$SKILLS_REPO_PATH"/skills/*; do cp -R "$s" "${CODEX_HOME:-$HOME/.codex}/skills/"; done
+npx skills install akarnikr/asuo-skills-inventory --skill '*' -y
 ```
 
 ## UX Rule

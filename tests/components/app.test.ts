@@ -6,7 +6,7 @@ describe('App', () => {
   it('shows skills and command blocks upfront', () => {
     render(App)
 
-    expect(screen.getByText(/Install all skills from local clone/i)).toBeTruthy()
+    expect(screen.getByText(/Install all skills with npx/i)).toBeTruthy()
     expect(screen.getAllByText(/Install with npx/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/Install from local clone/i).length).toBeGreaterThan(0)
     expect(screen.getAllByRole('button', { name: /copy npx command/i }).length).toBeGreaterThan(0)
@@ -46,7 +46,7 @@ describe('App', () => {
 
     expect(writeText).toHaveBeenCalledTimes(1)
     expect(writeText).toHaveBeenCalledWith(
-      expect.stringContaining('for s in "$SKILLS_REPO_PATH"/skills/*')
+      expect.stringContaining("npx skills install akarnikr/asuo-skills-inventory --skill '*' -y")
     )
   })
 })

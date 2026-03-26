@@ -6,8 +6,7 @@ import { skillsCatalog } from '@/data/skills.generated'
 const query = ref('')
 const allCopyState = ref<'idle' | 'copied'>('idle')
 
-const allSkillsCommand =
-  'for s in "$SKILLS_REPO_PATH"/skills/*; do cp -R "$s" "${CODEX_HOME:-$HOME/.codex}/skills/"; done'
+const allSkillsCommand = "npx skills install akarnikr/asuo-skills-inventory --skill '*' -y"
 
 const copyAllSkillsCommand = async () => {
   try {
@@ -59,9 +58,9 @@ const filteredSkills = computed(() => {
     <main class="container py-4">
       <section class="all-skills-command card mb-4">
         <div class="card-body">
-          <h2 class="h5 mb-2">Install all skills from local clone</h2>
+          <h2 class="h5 mb-2">Install all skills with npx</h2>
           <p class="text-muted mb-2">
-            Use this command if you want to copy the full repository catalog into your local Codex skills directory.
+            Use this command to install every skill from this repository into your local Codex skills directory.
           </p>
           <pre class="command-box"><code>{{ allSkillsCommand }}</code></pre>
           <button type="button" class="btn btn-maroon btn-sm" @click="copyAllSkillsCommand">
