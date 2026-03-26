@@ -1,0 +1,124 @@
+:root {
+  --asu-maroon: #8c1d40;
+  --asu-maroon-dark: #5b1630;
+  --asu-gold: #ffc627;
+  --asu-gray-100: #f9f7f5;
+  --asu-gray-700: #3a3434;
+  --asu-focus: #1769aa;
+  --brand-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--brand-font);
+  color: var(--asu-gray-700);
+  background: linear-gradient(180deg, #ffffff 0%, var(--asu-gray-100) 100%);
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--asu-maroon-dark) 0%, var(--asu-maroon) 70%, #b5234f 100%);
+  color: #fff;
+  border-bottom: 6px solid var(--asu-gold);
+}
+
+.hero-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--asu-gold);
+}
+
+.hero-title {
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.hero-subtitle {
+  max-width: 52rem;
+  font-size: 1.1rem;
+}
+
+.results-count {
+  font-weight: 700;
+  color: var(--asu-maroon);
+}
+
+.all-skills-command {
+  border: 0;
+  border-left: 6px solid var(--asu-gold);
+  box-shadow: 0 10px 24px rgba(24, 18, 18, 0.08);
+}
+
+.skill-card {
+  border: 0;
+  border-top: 5px solid var(--asu-maroon);
+  box-shadow: 0 10px 24px rgba(24, 18, 18, 0.08);
+}
+
+.skill-title {
+  color: var(--asu-maroon-dark);
+  font-weight: 800;
+}
+
+.skill-slug {
+  display: inline-block;
+  background: #f1e2e7;
+  color: var(--asu-maroon-dark);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.command-heading {
+  font-weight: 700;
+  color: var(--asu-maroon-dark);
+}
+
+.command-box {
+  background: #1f1f1f;
+  color: #f8f9fa;
+  padding: 0.85rem;
+  border-radius: 0.4rem;
+  font-size: 0.84rem;
+  white-space: pre-wrap;
+}
+
+.btn-maroon {
+  color: #fff;
+  background-color: var(--asu-maroon);
+  border-color: var(--asu-maroon);
+}
+
+.btn-maroon:hover,
+.btn-maroon:focus {
+  color: #fff;
+  background-color: var(--asu-maroon-dark);
+  border-color: var(--asu-maroon-dark);
+}
+
+.btn-outline-maroon {
+  color: var(--asu-maroon);
+  border-color: var(--asu-maroon);
+  background: transparent;
+}
+
+.btn-outline-maroon:hover,
+.btn-outline-maroon:focus {
+  color: #fff;
+  background: var(--asu-maroon);
+  border-color: var(--asu-maroon);
+}
+
+a:focus,
+button:focus,
+input:focus {
+  outline: 3px solid var(--asu-focus) !important;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+}
