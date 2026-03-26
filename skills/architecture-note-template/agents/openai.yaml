@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architecture Note Template"
+  short_description: "Generate ADR and runbook templates"
+  default_prompt: "Use this skill to create concise ADR and runbook templates under docs/ for major technical decisions, including context, decision, consequences, rollout, and ownership."
