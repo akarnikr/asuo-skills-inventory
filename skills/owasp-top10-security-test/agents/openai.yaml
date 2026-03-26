@@ -1,0 +1,4 @@
+interface:
+  display_name: "OWASP Top 10 Security Test"
+  short_description: "Test code for OWASP Top 10 risks"
+  default_prompt: "Use this skill to review and test application code against OWASP Top 10 risks, report findings by severity with CWE/OWASP mapping, and provide concrete remediation steps and verification checks."
