@@ -1,0 +1,4 @@
+interface:
+  display_name: "Git Main Branch Guard"
+  short_description: "Block commit/push on main branch"
+  default_prompt: "Use this skill to enforce branch safety by preventing commits and pushes on main, requiring a new feature branch for every feature, and providing exact remediation commands."
