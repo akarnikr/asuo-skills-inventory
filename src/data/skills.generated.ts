@@ -103,12 +103,23 @@ export const skillsCatalog: SkillRecord[] = [
   {
     "slug": "rds-component-mapper",
     "name": "rds-component-mapper",
-    "description": "Map requirement text to best-fit RDS Vue UI components and identify unsupported requirements. Use when planning UI implementation, reviewing feature requirements, or validating component choices before coding. Emit `WARNING: RDS GAP` whenever no available RDS component fully satisfies a requirement.",
+    "description": "Map requirement text to best-fit RDS Vue UI components and identify unsupported requirements. Use when planning UI implementation, reviewing feature requirements, or validating component choices before coding. Emit `WARNING: RDS GAP` whenever no available RDS component fully satisfies a requirement and define the minimal custom component needed.",
     "displayName": "RDS Component Mapper",
     "shortDescription": "Map requirements to RDS components",
     "defaultPrompt": "Use this skill to map requirement text to RDS Vue UI components, identify best-fit options, and emit WARNING: RDS GAP when no component fully satisfies a requirement.",
     "path": "skills/rds-component-mapper",
     "npxCommand": "npx skills add akarnikr/asuo-skills-inventory@rds-component-mapper -g -y",
     "copyCommand": "cp -R \"$SKILLS_REPO_PATH/skills/rds-component-mapper\" \"${CODEX_HOME:-$HOME/.codex}/skills\""
+  },
+  {
+    "slug": "seo-web-audit",
+    "name": "seo-web-audit",
+    "description": "Audit one or more webpages for technical SEO, on-page SEO, and content discoverability risks, then return severity-ranked findings with concrete fixes. Use when validating page launch readiness, diagnosing ranking/traffic drops, reviewing templates, or performing recurring SEO health checks.",
+    "displayName": "SEO Web Audit",
+    "shortDescription": "Audit webpages for technical and on-page SEO risks",
+    "defaultPrompt": "Use this skill to audit one or more webpages for indexability, metadata, content, links, performance, and structured data issues, then return prioritized findings with actionable fixes.",
+    "path": "skills/seo-web-audit",
+    "npxCommand": "npx skills add akarnikr/asuo-skills-inventory@seo-web-audit -g -y",
+    "copyCommand": "cp -R \"$SKILLS_REPO_PATH/skills/seo-web-audit\" \"${CODEX_HOME:-$HOME/.codex}/skills\""
   }
 ]

@@ -1,0 +1,4 @@
+interface:
+  display_name: "SEO Web Audit"
+  short_description: "Audit webpages for technical and on-page SEO risks"
+  default_prompt: "Use this skill to audit one or more webpages for indexability, metadata, content, links, performance, and structured data issues, then return prioritized findings with actionable fixes."

@@ -1,6 +1,6 @@
 ---
 name: rds-component-mapper
-description: "Map requirement text to best-fit RDS Vue UI components and identify unsupported requirements. Use when planning UI implementation, reviewing feature requirements, or validating component choices before coding. Emit `WARNING: RDS GAP` whenever no available RDS component fully satisfies a requirement."
+description: "Map requirement text to best-fit RDS Vue UI components and identify unsupported requirements. Use when planning UI implementation, reviewing feature requirements, or validating component choices before coding. Emit `WARNING: RDS GAP` whenever no available RDS component fully satisfies a requirement and define the minimal custom component needed."
 ---
 
 # RDS Component Mapper
@@ -19,9 +19,9 @@ If key requirement details are missing, make minimal assumptions and list them u
 1. Break requirement text into atomic UI behaviors.
 2. Classify each behavior type: visual, interactive, data-driven, accessibility-sensitive.
 3. Select the best-fit RDS component for each behavior.
-4. Record decision rationale using props/slots/states/events expectations.
+4. If a behavior cannot be mapped to RDS, define a minimal custom component (name, responsibilities, props/events/states, accessibility requirements) and include it in the mapping output.
 5. If no component fully satisfies the behavior, emit `WARNING: RDS GAP`.
-6. Propose the smallest possible workaround (composition first, custom component last).
+6. Record decision rationale using props/slots/states/events expectations.
 
 ## Mandatory Gap Format
 When a gap exists, use this exact structure:
@@ -40,7 +40,8 @@ Return in this order:
 
 ## Quality Gates
 - Every requirement must map to an RDS component or a documented gap.
-- No custom proposal without a preceding `WARNING: RDS GAP` block.
+- Every documented gap must include a minimal custom component definition.
+- No custom component definition without a preceding `WARNING: RDS GAP` block.
 - Mapping rationale must be implementation-usable (not generic).
 
 ## Repository Alignment
