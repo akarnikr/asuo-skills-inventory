@@ -1,23 +1,24 @@
 # asuo-skills-inventory
 
-Skills repository for ASUO engineering projects, with an ASU-branded frontend catalog for browsing skills and copying install commands.
+Skills-only repository for ASUO engineering projects.
+
+This repository stores reusable Codex skills under `skills/` and does not include a web application.
 
 ## Install Skills with `npx`
-- Install a single skill:
+
+Install a single skill:
+
 ```bash
 npx skills add akarnikr/asuo-skills-inventory@<skill-slug> -g -y
 ```
-- Install all skills from this repository:
+
+Install all skills from this repository:
+
 ```bash
 npx skills install akarnikr/asuo-skills-inventory --skill '*' -y
 ```
 
-## Website Development
-- `yarn install`
-- `yarn dev`
-- `yarn test`
-- `yarn lint`
-- `yarn build`
+## Repository Layout
 
-## Generated Data
-- Run `yarn skills:manifest` to regenerate `src/data/skills.generated.ts` from `skills/`.
+- `skills/`: versioned skill definitions and instructions
+- `skills-lock.json`: lock metadata for skills
