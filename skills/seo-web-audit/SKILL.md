@@ -5,10 +5,10 @@ description: Audit one or more webpages for technical SEO, on-page SEO, and cont
 
 # SEO Web Audit
 
-Run a deterministic SEO audit for webpages and produce actionable remediation guidance.
+Use this skill to run a consistent SEO audit for webpages and return prioritized, actionable fixes.
 
-## Inputs To Gather
-Collect as many of the following artifacts as available:
+## What To Collect
+Collect as many of these artifacts as available:
 - Target URLs and page type (landing page, blog, product, docs, etc.).
 - Crawl/indexability signals (`robots.txt`, meta robots directives, canonical tags, sitemap hints).
 - Rendered HTML signals (`title`, meta description, headings, structured data, internal links, image attributes).
@@ -17,25 +17,82 @@ Collect as many of the following artifacts as available:
 
 If critical artifacts are missing, continue with best-effort analysis and report `Missing info` explicitly.
 
-## Audit Workflow
-1. Confirm crawl and indexability controls:
-- Check robots directives, noindex usage, blocked resources, and canonical conflicts.
-2. Evaluate SERP snippet readiness:
-- Check title uniqueness/quality, meta description quality, and URL readability.
-3. Evaluate content structure and intent alignment:
-- Check heading hierarchy, topic focus, keyword coverage, and duplicate/thin content risk.
-4. Review internal linking and navigation signals:
-- Check orphaned pages risk, anchor clarity, broken internal links, and crawl depth issues.
-5. Review media SEO basics:
-- Check descriptive alt text, image file naming, and media payload impact.
-6. Evaluate structured data quality:
-- Check schema presence, type relevance, required fields, and obvious markup inconsistencies.
-7. Evaluate page experience and performance:
-- Check render-blocking patterns, heavy assets, layout instability risks, and mobile usability concerns.
-8. Evaluate international or regional signals when applicable:
-- Check hreflang consistency and locale targeting.
-9. Prioritize fixes by business impact and implementation effort:
-- Recommend the smallest high-impact fixes first.
+## Audit Steps
+1. Review crawlability and indexability controls.
+2. Review SERP snippet quality.
+3. Review content structure and intent alignment.
+4. Review internal linking and navigation signals.
+5. Review media SEO basics.
+6. Review structured data quality.
+7. Review performance and page experience signals.
+8. Review international and localization signals when relevant.
+9. Prioritize the smallest high-impact fixes first.
+
+## SEO Checklist
+
+Mark each line item as:
+- `Pass`
+- `Issue`
+- `Not applicable`
+- `Unknown` (missing artifact)
+
+### 1) Crawlability And Indexability
+- `robots.txt` allows the page and critical rendering assets.
+- Meta robots directives do not unintentionally block indexing.
+- X-Robots-Tag headers do not conflict with indexing goals.
+- Canonical tag is present, absolute, and points to the preferred URL.
+- Canonical signal is self-referential for canonical pages.
+- Redirect chains are minimal (avoid multi-hop paths).
+- HTTP status is correct (`200` for canonical pages).
+
+### 2) SERP Snippet Signals
+- Title tag exists, is unique, and reflects page intent.
+- Title avoids duplication across sibling pages.
+- Meta description exists and summarizes user value.
+- URL slug is readable and avoids noisy parameters where possible.
+
+### 3) Content And Information Architecture
+- Exactly one clear `H1` aligned to page topic.
+- Heading order is logical and scannable (`H1 -> H2 -> H3`).
+- Primary user intent is covered early in content.
+- Content avoids thin, duplicate, or boilerplate-heavy copy.
+- Supporting entities/subtopics are covered where relevant.
+
+### 4) Internal Linking
+- Page is reachable from navigation hubs and relevant internal paths.
+- Anchor text is descriptive and context-relevant.
+- Important conversion pages receive internal link equity.
+- Broken internal links are absent.
+- Breadcrumbs exist where they improve hierarchy clarity.
+
+### 5) Media Optimization
+- Informative images include descriptive `alt` text.
+- Decorative images avoid misleading `alt` values.
+- Image formats and dimensions are optimized for delivery.
+- Large media does not block initial render unnecessarily.
+
+### 6) Structured Data
+- Structured data is present where useful (Article, FAQ, Product, etc.).
+- Markup type matches visible page content.
+- Required properties appear populated.
+- Structured data does not contradict visible content.
+
+### 7) Performance And UX Proxies
+- Largest content element is not delayed by heavy blocking assets.
+- Excessive JavaScript payload risk is identified.
+- Layout shift risk is minimized with stable element dimensions.
+- Mobile viewport rendering is usable without horizontal scrolling.
+- Tap targets/navigation are usable on mobile.
+
+### 8) International And Localization (If Applicable)
+- Hreflang annotations are present and mutually consistent.
+- Canonical and hreflang signals do not conflict.
+- Regional/language targeting aligns with audience.
+
+### 9) Measurement And Validation
+- Success metric is mapped per fix (indexation, CTR, ranking, conversion).
+- Validation method is defined (crawl, search console, logs, analytics).
+- Follow-up check window is specified (for example `2-6 weeks`).
 
 ## Severity Model
 - `Critical`: Prevents indexing/discovery or causes severe ranking loss risk.
@@ -59,6 +116,3 @@ Return in this order:
 - Avoid speculative claims without observable signals.
 - Prefer minimal, implementable fixes over broad rewrites.
 - When relevant, include measurement guidance (what metric should improve and how to verify).
-
-## Reference
-Use [references/seo-audit-checklist.md](references/seo-audit-checklist.md) as the baseline checklist while auditing.
