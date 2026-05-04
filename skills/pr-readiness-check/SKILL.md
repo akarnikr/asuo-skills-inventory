@@ -35,16 +35,16 @@ Return in this order:
 2. Missing info requests.
 3. Non-blocking improvements.
 4. Final readiness decision with one-line rationale.
+5. Summary of all commits to use in PR description.
 
 ## Repository Alignment
 
 Apply repository conventions from `AGENTS.md`:
 
-- Require test evidence (`yarn test`) and lint evidence (`yarn lint`) for changed areas.
-- Require screenshots for UI-visible changes.
+# - Require test evidence (`yarn test`) and lint evidence (`yarn lint`) for changed areas.
+
+# - Require screenshots for UI-visible changes.
+
+- Require test evidence and lint evidence for changed areas.
 - Expect Conventional Commit style and focused PR scope.
 - Ensure secret/config handling follows `.env.example` and docs guidance.
-
-## Reference
-
-Use [references/pr-checklist.md](references/pr-checklist.md) as the fast checklist during review.
