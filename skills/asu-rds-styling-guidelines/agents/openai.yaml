@@ -1,4 +1,0 @@
-interface:
-  display_name: "ASU RDS Styling Guidelines"
-  short_description: "Enforce ASU branding with RDS components"
-  default_prompt: "Use this skill to ensure webpage UI implementation follows ASU brand guidelines similar to asuonline.asu.edu and uses RDS Vue UI components first. Do not create custom components unless absolutely necessary, and warn when requirements do not map to available RDS components."

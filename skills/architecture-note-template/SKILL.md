@@ -45,6 +45,106 @@ Return in this order:
 - Rollout and rollback steps must be present for implementation-impacting decisions.
 - Ownership must be explicit (team or role).
 
-## Reference
-- ADR template: [references/adr-template.md](references/adr-template.md)
-- Runbook template: [references/runbook-template.md](references/runbook-template.md)
+
+## Inlined Agent Config
+
+Source: agents/openai.yaml
+
+```yaml
+interface:
+  display_name: "Architecture Note Template"
+  short_description: "Generate ADR and runbook templates"
+  default_prompt: "Use this skill to create concise ADR and runbook templates under docs/ for major technical decisions, including context, decision, consequences, rollout, and ownership."
+```
+
+## Inlined References
+
+### references/adr-template.md
+
+# ADR: <Decision Title>
+
+- Status: Proposed | Accepted | Superseded
+- Date: YYYY-MM-DD
+- Owners: <team-or-role>
+- Related issue/task: <link-or-id>
+
+## Context
+Describe the problem, constraints, and why a decision is needed now.
+
+## Decision
+State the chosen approach clearly.
+
+## Options Considered
+1. <Option A>
+2. <Option B>
+3. <Option C>
+
+## Rationale
+Explain why the selected option is preferred over alternatives.
+
+## Consequences
+- Positive:
+- Negative:
+- Neutral / tradeoffs:
+
+## Rollout Plan
+1. Step one
+2. Step two
+3. Step three
+
+## Rollback Plan
+1. Trigger conditions for rollback
+2. Revert steps
+3. Validation after rollback
+
+## Validation
+Define how success is measured (tests, metrics, SLO impact, user outcomes).
+
+## Open Questions
+- TODO(owner): <question>
+
+
+### references/runbook-template.md
+
+# Runbook: <Runbook Title>
+
+- Last updated: YYYY-MM-DD
+- Owners: <team-or-role>
+- Service/Component: <name>
+
+## Purpose
+Describe what this runbook covers and when to use it.
+
+## Preconditions
+- Access required:
+- Feature flags / env vars:
+- Dependencies:
+
+## Procedure
+1. Step one with exact command/action.
+2. Step two with expected result.
+3. Step three with verification check.
+
+## Failure Handling
+- Symptom:
+- Likely cause:
+- Remediation:
+
+## Rollback
+1. Rollback trigger
+2. Rollback actions
+3. Post-rollback verification
+
+## Verification Checklist
+- [ ] Primary behavior verified
+- [ ] Logs/metrics healthy
+- [ ] User impact validated
+
+## Escalation
+- On-call/team:
+- Escalation path:
+- Communication channel:
+
+## References
+- Links to ADRs, dashboards, tickets, and docs.
+

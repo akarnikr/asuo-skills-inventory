@@ -29,5 +29,68 @@ If not provided, default to a UI feature with local mock data and TODO markers f
 - Do not introduce alternate tooling unless asked.
 - Ensure tests include at least one happy path and one failure/edge path.
 
-## Reference
-Use [references/scaffold-template.md](references/scaffold-template.md) for the exact directory/file blueprint and starter snippets.
+
+## Inlined Agent Config
+
+Source: agents/openai.yaml
+
+```yaml
+interface:
+  display_name: "Feature Scaffold Vue"
+  short_description: "Scaffold Vue feature modules"
+  default_prompt: "Use this skill to scaffold a Vue 3 feature module in src/features with mirrored Vitest tests under tests/features and minimal starter files aligned to AGENTS.md."
+```
+
+## Inlined References
+
+### references/scaffold-template.md
+
+# Scaffold Template
+
+Use this blueprint for a feature named `<feature-name>` with component `<FeatureName>`.
+
+```text
+src/features/<feature-name>/
+  index.ts
+  <FeatureName>.vue
+  use<FeatureName>.ts
+  types.ts
+  README.md
+
+tests/features/<feature-name>/
+  <FeatureName>.spec.ts
+  use<FeatureName>.test.ts
+```
+
+## `index.ts`
+```ts
+export { default as <FeatureName> } from './<FeatureName>.vue'
+export * from './types'
+export * from './use<FeatureName>'
+```
+
+## `types.ts`
+```ts
+export interface <FeatureName>State {
+  loading: boolean
+  error: string | null
+}
+```
+
+## `use<FeatureName>.ts`
+```ts
+import { ref } from 'vue'
+
+export function use<featureName>() {
+  const loading = ref(false)
+  const error = ref<string | null>(null)
+
+  return { loading, error }
+}
+```
+
+## Test baseline
+- Add one happy-path assertion.
+- Add one edge/failure assertion.
+- Keep tests deterministic (no network calls in unit tests).
+

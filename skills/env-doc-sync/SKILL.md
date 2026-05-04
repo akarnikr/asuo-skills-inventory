@@ -40,5 +40,44 @@ Return:
 - Keep `.env.example` and docs synchronized in the same change set.
 - Align with `AGENTS.md` security guidance and naming clarity.
 
-## Reference
-Use [references/env-sync-checklist.md](references/env-sync-checklist.md) as the execution checklist.
+
+## Inlined Agent Config
+
+Source: agents/openai.yaml
+
+```yaml
+interface:
+  display_name: "Env Doc Sync"
+  short_description: "Keep env docs and examples in sync"
+  default_prompt: "Use this skill to keep .env.example and environment documentation synchronized by adding/removing keys, descriptions, defaults/placeholders, and usage notes without exposing secrets."
+```
+
+## Inlined References
+
+### references/env-sync-checklist.md
+
+# Env Sync Checklist
+
+## Safety First
+- Confirm whether real secret values are needed; if yes, request explicit user permission first.
+- Default to placeholders in `.env.example`; never place live secrets in git-tracked files.
+
+## Discovery
+- Extract env keys from code/config usage.
+- Compare against `.env.example`.
+- Compare against environment documentation.
+
+## Reconciliation
+- Add missing keys with placeholder/default semantics.
+- Remove stale keys.
+- Document each key: purpose, required/optional, default/placeholder, and usage.
+
+## Consistency
+- Keep naming style consistent (uppercase snake case unless project says otherwise).
+- Keep ordering/grouping consistent.
+- Ensure docs and `.env.example` match exactly on key names.
+
+## Final Checks
+- Verify no real secret values were introduced.
+- Summarize changed keys and required secret-manager follow-up.
+

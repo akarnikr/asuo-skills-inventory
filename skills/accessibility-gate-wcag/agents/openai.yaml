@@ -1,4 +1,0 @@
-interface:
-  display_name: "Accessibility Gate WCAG"
-  short_description: "Audit UI changes for WCAG 2.1 A/AA"
-  default_prompt: "Use this skill to audit changed frontend behavior for WCAG 2.1 Level A/AA issues, report severity-ranked findings with WCAG criteria and file references, and conclude with a pass/fail gate decision."

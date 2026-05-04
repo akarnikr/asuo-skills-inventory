@@ -68,6 +68,28 @@ export const skillsCatalog: SkillRecord[] = [
     "copyCommand": "cp -R \"$SKILLS_REPO_PATH/skills/feature-scaffold-vue\" \"${CODEX_HOME:-$HOME/.codex}/skills\""
   },
   {
+    "slug": "generic-issue-to-prd",
+    "name": "generic-issue-to-prd",
+    "description": "Convert an issue, bug report, feature request, or conversation context into a portable PRD for any project. Use when the user wants a project-agnostic PRD that can work across repositories, stacks, and issue trackers.",
+    "displayName": "generic-issue-to-prd",
+    "shortDescription": "",
+    "defaultPrompt": "",
+    "path": "skills/generic-issue-to-prd",
+    "npxCommand": "npx skills add akarnikr/asuo-skills-inventory@generic-issue-to-prd -g -y",
+    "copyCommand": "cp -R \"$SKILLS_REPO_PATH/skills/generic-issue-to-prd\" \"${CODEX_HOME:-$HOME/.codex}/skills\""
+  },
+  {
+    "slug": "generic-prd-to-plan",
+    "name": "generic-prd-to-plan",
+    "description": "Convert an existing PRD into a portable implementation plan for any project. Use when the user wants a project-agnostic plan from a PRD, ticket, product spec, or requirements document without modifying the source PRD.",
+    "displayName": "generic-prd-to-plan",
+    "shortDescription": "",
+    "defaultPrompt": "",
+    "path": "skills/generic-prd-to-plan",
+    "npxCommand": "npx skills add akarnikr/asuo-skills-inventory@generic-prd-to-plan -g -y",
+    "copyCommand": "cp -R \"$SKILLS_REPO_PATH/skills/generic-prd-to-plan\" \"${CODEX_HOME:-$HOME/.codex}/skills\""
+  },
+  {
     "slug": "git-main-branch-guard",
     "name": "git-main-branch-guard",
     "description": "Enforce git branch safety rules by blocking commits and pushes on `main` and requiring a dedicated feature branch for each new feature. Use when preparing to commit, push, or start feature development so risky branch actions are prevented before they happen.",
@@ -82,9 +104,9 @@ export const skillsCatalog: SkillRecord[] = [
     "slug": "owasp-top10-security-test",
     "name": "owasp-top10-security-test",
     "description": "Assess application code and configuration for OWASP Top 10 security risks with actionable findings and remediations. Use when reviewing new features, bug fixes, pull requests, or release candidates where security regression risk must be evaluated systematically.",
-    "displayName": "OWASP Top 10 Security Test",
-    "shortDescription": "Test code for OWASP Top 10 risks",
-    "defaultPrompt": "Use this skill to review and test application code against OWASP Top 10 risks, report findings by severity with CWE/OWASP mapping, and provide concrete remediation steps and verification checks.",
+    "displayName": "owasp-top10-security-test",
+    "shortDescription": "",
+    "defaultPrompt": "",
     "path": "skills/owasp-top10-security-test",
     "npxCommand": "npx skills add akarnikr/asuo-skills-inventory@owasp-top10-security-test -g -y",
     "copyCommand": "cp -R \"$SKILLS_REPO_PATH/skills/owasp-top10-security-test\" \"${CODEX_HOME:-$HOME/.codex}/skills\""
@@ -93,9 +115,9 @@ export const skillsCatalog: SkillRecord[] = [
     "slug": "pr-readiness-check",
     "name": "pr-readiness-check",
     "description": "Review pull requests for merge readiness with a consistent, risk-first checklist. Use when asked to review a PR, perform a pre-merge quality gate, validate test/lint evidence, check release risk, or provide a go/no-go recommendation with blocking findings first.",
-    "displayName": "PR Readiness Check",
-    "shortDescription": "Validate pull requests before merge",
-    "defaultPrompt": "Use this skill to evaluate whether a pull request is ready to merge by checking scope, tests, lint status, risk, docs, and release impact, then return blocking issues first and a concise readiness decision.",
+    "displayName": "pr-readiness-check",
+    "shortDescription": "",
+    "defaultPrompt": "",
     "path": "skills/pr-readiness-check",
     "npxCommand": "npx skills add akarnikr/asuo-skills-inventory@pr-readiness-check -g -y",
     "copyCommand": "cp -R \"$SKILLS_REPO_PATH/skills/pr-readiness-check\" \"${CODEX_HOME:-$HOME/.codex}/skills\""
@@ -112,12 +134,23 @@ export const skillsCatalog: SkillRecord[] = [
     "copyCommand": "cp -R \"$SKILLS_REPO_PATH/skills/rds-component-mapper\" \"${CODEX_HOME:-$HOME/.codex}/skills\""
   },
   {
+    "slug": "rds-landing-page-pack",
+    "name": "rds-landing-page-pack",
+    "description": "",
+    "displayName": "rds-landing-page-pack",
+    "shortDescription": "",
+    "defaultPrompt": "",
+    "path": "skills/rds-landing-page-pack",
+    "npxCommand": "npx skills add akarnikr/asuo-skills-inventory@rds-landing-page-pack -g -y",
+    "copyCommand": "cp -R \"$SKILLS_REPO_PATH/skills/rds-landing-page-pack\" \"${CODEX_HOME:-$HOME/.codex}/skills\""
+  },
+  {
     "slug": "seo-web-audit",
     "name": "seo-web-audit",
     "description": "Audit one or more webpages for technical SEO, on-page SEO, and content discoverability risks, then return severity-ranked findings with concrete fixes. Use when validating page launch readiness, diagnosing ranking/traffic drops, reviewing templates, or performing recurring SEO health checks.",
-    "displayName": "SEO Web Audit",
-    "shortDescription": "Audit webpages for technical and on-page SEO risks",
-    "defaultPrompt": "Use this skill to audit one or more webpages for indexability, metadata, content, links, performance, and structured data issues, then return prioritized findings with actionable fixes.",
+    "displayName": "seo-web-audit",
+    "shortDescription": "",
+    "defaultPrompt": "",
     "path": "skills/seo-web-audit",
     "npxCommand": "npx skills add akarnikr/asuo-skills-inventory@seo-web-audit -g -y",
     "copyCommand": "cp -R \"$SKILLS_REPO_PATH/skills/seo-web-audit\" \"${CODEX_HOME:-$HOME/.codex}/skills\""

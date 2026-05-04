@@ -43,9 +43,6 @@ Push new branch and set upstream:
 git push -u origin feature/<short-description>
 ```
 
-## Hook Guidance
-Use [references/git-hook-template.md](references/git-hook-template.md) to add local `pre-commit` and `pre-push` guards.
-
 ## Output Contract
 Return in this order:
 1. Current branch status.
@@ -57,3 +54,64 @@ Return in this order:
 - No commit or push recommendation is allowed on `main`.
 - Every new feature request must include feature branch creation guidance.
 - Remediation commands must be copy-paste ready.
+
+
+## Inlined Agent Config
+
+Source: agents/openai.yaml
+
+```yaml
+interface:
+  display_name: "Git Main Branch Guard"
+  short_description: "Block commit/push on main branch"
+  default_prompt: "Use this skill to enforce branch safety by preventing commits and pushes on main, requiring a new feature branch for every feature, and providing exact remediation commands."
+```
+
+## Inlined References
+
+### references/git-hook-template.md
+
+# Git Hook Template: Main Branch Protection
+
+Use these local hooks to enforce branch safety.
+
+## 1) `pre-commit`
+Create `.git/hooks/pre-commit`:
+
+```bash
+#!/usr/bin/env bash
+
+branch="$(git rev-parse --abbrev-ref HEAD)"
+if [ "$branch" = "main" ]; then
+  echo "WARNING: MAIN BRANCH PROTECTED"
+  echo "Commit/push to 'main' is not allowed."
+  echo "Create and switch to a feature branch first."
+  echo "Example: git checkout -b feature/<short-description>"
+  exit 1
+fi
+```
+
+## 2) `pre-push`
+Create `.git/hooks/pre-push`:
+
+```bash
+#!/usr/bin/env bash
+
+branch="$(git rev-parse --abbrev-ref HEAD)"
+if [ "$branch" = "main" ]; then
+  echo "WARNING: MAIN BRANCH PROTECTED"
+  echo "Push to 'main' is not allowed."
+  echo "Create and push a feature branch instead."
+  echo "Example: git checkout -b feature/<short-description>"
+  exit 1
+fi
+```
+
+## 3) Enable Hooks
+```bash
+chmod +x .git/hooks/pre-commit .git/hooks/pre-push
+```
+
+## 4) Verify
+- On `main`, `git commit` and `git push` should fail with warning output.
+- On non-`main`, commits and pushes should proceed normally.
